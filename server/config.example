@@ -1,0 +1,2 @@
+PORT=5000
+DATABASE=mongodb+srv://<username>:<password>@cluster0.yvupi.mongodb.net/DateNITTe?retryWrites=true&w=majority
