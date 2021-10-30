@@ -1,0 +1,8 @@
+*.png
+*.jpg
+*.css
+*.env
+*.example
+package.json
+package-lock.json
+README.md
