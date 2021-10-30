@@ -21,6 +21,21 @@ npm run start
 # Server runs on http://localhost:5000 and Client on http://localhost:3000
 ```
 
+## Plans for the project
+- [ ] User authentication and e-mail verification.
+- [ ] Ability to add user profile info, their interests, their likings and have an option to update it anytime.
+- [ ] Ability to add their profile pics and a gallery of their pics.
+- [ ] A Dashboard where users can see different profiles and can swipe left, swipe right, super like and more.
+- [ ] Algorithms to show profiles on the user's dashboard based on their interest, location and past experience with the app.
+- [ ] Real-time chat integration so that people can connect easily.
+- [ ] Ability to send GIFs and other media in the chat.
+- [ ] Real-time voice and video calls.
+- [ ] Ability to put stories and blogs on their profiles.
+- [ ] Connecting the app with Spotify so that people can see what their friends are listening :)
+- [ ] Amazon API integration so that users can send gifts to their partners from Amazon without knowing their address as a Secret Santa :)
+- [ ] A Web scrapper to track the prices of Amazon products.
+- [ ] A voice recognition AI integration so users can just speak and send messages.
+
 ## Contributing to this project
 Thanks for your interest in contributing to Date NITTe :)
 
