@@ -18,6 +18,15 @@ export const useStyles = makeStyles((theme) => ({
 		alignItems: "center",
 		justifyContent: "center",
 		letterSpacing: "2pt",
+		animation: "$bouncein 0.6s ease",
+	},
+	"@keyframes bouncein": {
+		"0%": {
+			transform: "scale(0)",
+		},
+		"100%": {
+			transform: "scale(1)",
+		},
 	},
 	form: {
 		backdropFilter: "blur(20px) saturate(160%)",
