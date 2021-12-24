@@ -18,6 +18,7 @@ module.exports = {
 		"react",
 	],
 	rules: {
+		"eol-last": ["error", "never"],
 		"react/jsx-indent": "off",
 		"react/jsx-filename-extension": "off",
 		"react/jsx-indent-props": "off",
@@ -26,7 +27,7 @@ module.exports = {
 		quotes: "off",
 		indent: "off",
 		"object-shorthand": 0,
-		"prefer-destructuring":0,
+		"prefer-destructuring": 0,
 		"linebreak-style": "off",
 		"no-tabs": "off",
 	},

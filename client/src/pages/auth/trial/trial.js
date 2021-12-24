@@ -1,3 +1,13 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable max-len */
+/* eslint-disable arrow-body-style */
+/* eslint-disable no-shadow */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable no-console */
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable eol-last */
 import React, { useState } from "react";
 import 'date-fns';
 import Grid from '@material-ui/core/Grid';
@@ -6,7 +16,6 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
-
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -23,26 +32,45 @@ import "react-toastify/dist/ReactToastify.css";
 
 // import { ToastContainer, toast } from "react-toastify";
 import {
-    Button,
+	Button,
     TextField,
-	// Typography,
+	Typography,
 	Container,
 	// Grid,
 	InputAdornment,
 	IconButton,
 	// Link,
 } from "@material-ui/core";
-
+// import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 // import { ApiService } from "../../../api.services";
-
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Styles from "./Style.module.css";
+// import Background from "../../../assets/images/bg.jpg";
 // import { useStyles } from "./styles";
+const finalSpaceCharacters = [
+	{
+	  id: 'Entertainment',
+	  name: 'Entertainment',
+	},
+	{
+	  id: 'Foods and Travel',
+	  name: 'Foods and Travel',
+	},
+	{
+	  id: 'Books',
+	  name: 'Books',
+	},
+	{
+	  id: 'Sports',
+	  name: 'Sports',
+	},
+  ];
 
 export const trial = () => {
 	const useStyles = makeStyles((theme) => ({
@@ -67,7 +95,7 @@ export const trial = () => {
 	function getSteps() {
 		return ['Basic Details', 'Personal Details', 'Final Step'];
 	}
-	// const classes = useStyles();
+	const classes = useStyles();
 	const [activeStep, setActiveStep] = React.useState(0);
 	const steps = getSteps();
 	const handleNext = () => {
@@ -80,26 +108,29 @@ export const trial = () => {
 		setActiveStep(0);
 	};
 	// function HorizontalLabelPositionBelowStepper() {
-		// }
-		const [showPassword, setShowPassword] = useState(false);
+	// 	}
+	const [showPassword, setShowPassword] = useState(false);
 		const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 		const [Name, setName] = useState("");
 		const [Rollno, setRollNo] = useState("");
+		const [UserName, setUserName] = useState("");
 		const [Password, setPassword] = useState("");
 		const [Gender, setGender] = useState('');
 		const [PhoneNo, setPhoneno] = useState();
 		const [selectedDate, setSelectedDate] = useState(new Date('2014-01-01'));
 		const [ConfirmPassword, setConfirmPassword] = useState("");
+		const [Preferrence, setPreferrence] = useState("");
+		const [characters, updateCharacters] = useState(finalSpaceCharacters);
 		const handleClickShowPassword = () => setShowPassword(!showPassword);
 		const handleClickShowConfirmPassword = () => setShowConfirmPassword(!showConfirmPassword);
 		const handleDateChange = (date) => {
 			setSelectedDate(date);
     };
-	const classes = useStyles();
+	// const classes = useStyles();
 	const handlegenderChange = (event) => {
 		setGender(event.target.value);
 	};
-	const validat = (name, rollno, gender, phoneno, date, password, confirmpassword) => {
+	const validat1 = (name, rollno, gender, phoneno, date, password, confirmpassword) => {
 		let isvalidated = false;
 		let numofvalid = 0;
 		const msg = [];
@@ -147,25 +178,60 @@ const obj = {
 };
 return obj;
 };
-const handleSubmit = (e) => {
+const handleSubmit1 = (e) => {
 	e.preventDefault();
-    const obj = validat(Name, Rollno, Gender, PhoneNo, selectedDate, Password, ConfirmPassword);
+    const obj = validat1(Name, Rollno, Gender, PhoneNo, selectedDate, Password, ConfirmPassword);
     const isvalidated = obj.isvalidated;
     const msg = obj.msg;
     console.log(isvalidated);
     console.log(msg);
-	if (isvalidated) {
+	// if (isvalidated) {
 		handleNext();
-	}
+	// }
 };
+const handleSubmit2 = (e) => {
+	e.preventDefault();
+	const abc = [];
+	characters.map((character) => {
+		abc.push(character.name);
+	});
+	setPreferrence(abc);
+	console.log(abc);
+	console.log(Preferrence);
+	handleNext();
+};
+const handleSubmit3 = (e) => {
+	e.preventDefault();
+	console.log(Preferrence);
+};
+// Drag and Drop
+
+function handleOnDragEnd(result) {
+	if (!result.destination) return;
+
+	const items = Array.from(characters);
+	const [reorderedItem] = items.splice(result.source.index, 1);
+	items.splice(result.destination.index, 0, reorderedItem);
+
+	updateCharacters(items);
+}
+
+// End of Drag and Drop
+
 function getStepContent(stepIndex) {
 	switch (stepIndex) {
 		case 0:
 		return (
 <div className={Styles.paper}>
-		{/* {msg.map((errors)=>(
-			<div>{errors}</div>
-		))} */}
+{/* <Grid
+	className={Styles.form}
+	container
+	spacing={5}
+	direction="column"
+	justifyContent="center"
+	alignItems="center"
+> */}
+<form>
 		<TextField
 			size="small"
 			color="secondary"
@@ -193,6 +259,21 @@ function getStepContent(stepIndex) {
 			label="RollNo"
 			name="RollNo"
 			type="RollNo"
+		/>
+
+		<TextField
+			size="small"
+			color="secondary"
+			variant="outlined"
+			margin="normal"
+			required
+			fullWidth
+			value={UserName}
+			onChange={(e) => setUserName(e.target.value)}
+			id="UserName"
+			label="User Name"
+			name="UserName"
+			type="UserName"
 		/>
 
 		<FormControl className={classes.formControl}>
@@ -239,6 +320,36 @@ function getStepContent(stepIndex) {
 	/>
   </Grid>
 </MuiPickersUtilsProvider>
+{/* <div style={{ fontSize: "20px" }}>
+	Interests
+</div> */}
+
+{/* Interest Column */}
+
+	{/* <Typography style={{ fontSize: "15px", marginTop: "10px" }}>Interests:</Typography>
+
+<Button variant="outlined" size="small" color="default" style={{ marginLeft: "20px",
+marginTop: "10px" }}>
+	Entertainments
+</Button>
+	<br />
+	<Button variant="outlined" size="small" color="default" style={{ marginLeft: "20px",
+	marginTop: "10px" }}>
+		Sports
+	</Button>
+	<br />
+	<Button variant="outlined" size="small" color="default" style={{ marginLeft: "20px",
+	marginTop: "10px" }}>
+		Travel and Food
+	</Button>
+	<br />
+	<Button variant="outlined" size="small" color="default" style={{ marginLeft: "20px",
+	marginTop: "10px" }}>
+		Books
+	</Button>
+	<br /> */}
+
+{/* End of Interest Column */}
 	<TextField
 		size="small"
 		color="secondary"
@@ -317,31 +428,82 @@ function getStepContent(stepIndex) {
 		type="submit"
 		color="primary"
 		variant="contained"
-		onClick={(e) => handleSubmit(e)}
+		// style={{ marginTop: "20px" }}
+		onClick={(e) => handleSubmit1(e)}
 	>
-		{activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+	 	{/* Finish */}
+	 	{activeStep === steps.length - 1 ? 'Finish' : 'Next'}
 	</Button>
+</form>
+{/* </Grid> */}
 </div>
 	);
-
-		case 1:
-		return (
-		<div className={Styles.paper}>
-			<Button
-				disabled={activeStep === 0}
-				onClick={handleBack}
-				className={classes.backButton}
-			>
-				Back
-			</Button>
-			<Button variant="contained" color="primary" onClick={handleNext}>
-				{activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-			</Button>
-		</div>
+	case 1:
+	return (
+	<div style={{ textAlign: "left", marginLeft: "20%", width: "50%" }}>
+	<form>
+	<div className="App">
+      <header className="App-header">
+        <h3>Preferrence Order</h3>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="characters">
+            {(provided) => (
+              	<ul style={{ padding: "0px" }} className={Styles.list} {...provided.droppableProps} ref={provided.innerRef}>
+                	{characters.map(({ id, name }, index) => {
+						return (
+                    		<Draggable key={id} draggableId={id} index={index}>
+								{(provided) => (
+									<div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+										{ name }
+									</div>
+								)}
+                    		</Draggable>
+						);
+              		})}
+              		{provided.placeholder}
+              	</ul>
+            )}
+          </Droppable>
+        </DragDropContext>
+      </header>
+	</div>
+				{/* <div className={classes.root}>
+					<input
+						accept="image/*"
+						className={classes.input}
+						id="contained-button-file"
+						multiple
+						type="file"
+					/>
+				<label htmlFor="contained-button-file">
+					<Button variant="contained" color="primary" component="span">
+						Upload
+					</Button>
+				</label>
+				<input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
+				<label htmlFor="icon-button-file">
+					<IconButton color="primary" aria-label="upload picture" component="span">
+						<PhotoCamera />
+					</IconButton>
+				</label>
+				</div> */}
+		<Button
+			disabled={activeStep === 0}
+			onClick={handleBack}
+			className={classes.backButton}
+		>
+			Back
+		</Button>
+		<Button variant="contained" color="primary" type="submit" onClick={(e) => { handleSubmit2(e); }}>
+			{activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+		</Button>
+	</form>
+	</div>
 		);
 		case 2:
 		return (
 		<div className={Styles.paper}>
+		<form>
 			<Button
 				disabled={activeStep === 0}
 				onClick={handleBack}
@@ -349,58 +511,43 @@ function getStepContent(stepIndex) {
 			>
 				Back
 			</Button>
-			<Button variant="contained" color="primary" onClick={handleNext}>
+			<Button variant="contained" color="primary" type="submit" onClick={(e) => { handleSubmit3(e); }}>
 				{activeStep === steps.length - 1 ? 'Finish' : 'Next'}
 			</Button>
+		</form>
 		</div>
-
 		);
 		default:
 		return 'Unknown stepIndex';
 	}
 }
-
 	return (
-		<div>
+		<div id="1234" className={Styles.root} style={{ textAlign: "center" }}>
+		{/* <img src={Background} className={Styles.bgimg} alt="bgimg" /> */}
 			<Container
-				maxWidth="sm"
-				className="container"
+				maxWidth="xs"
+				component="main"
+				className={Styles.form}
+				styles={{ border: "20px solid black" }}
+				id="123456"
 			>
-			{/* Start of Stepper */}
-			<div className={classes.root}>
-      			<Stepper activeStep={activeStep} alternativeLabel>
-        			{steps.map((label) => (
+				{/* Start of Stepper */}
+				<Stepper activeStep={activeStep} alternativeLabel>
+					{steps.map((label) => (
 					<Step key={label}>
-            			<StepLabel>{label}</StepLabel>
+						<StepLabel>{label}</StepLabel>
 					</Step>
 					))}
-      			</Stepper>
-			<div>
-        	{activeStep === steps.length ? (
-				<div>
-            		<Typography className={classes.instructions}>All steps completed</Typography>
-            		<Button onClick={handleReset}>Reset</Button>
-				</div>
-			) : (
-			<div>
-            	<Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-            		<div>
-					{/* <Button
-					disabled={activeStep === 0}
-					onClick={handleBack}
-					className={classes.backButton}
-					>
-					Back
-					</Button>
-					<Button variant="contained" color="primary" onClick={handleNext}>
-						{activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-					</Button> */}
-            		</div>
-			</div>
-			)}
-			</div>
-			</div>
-		{/* End of Stepper */}
+				</Stepper>
+        		{activeStep === steps.length ? (
+					<div>
+            			<Typography className={classes.instructions}>All steps completed</Typography>
+            			<Button onClick={handleReset}>Reset</Button>
+					</div>
+				) : (
+				<Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+				)}
+			{/* End of Stepper */}
 			</Container>
 		</div>
 	);

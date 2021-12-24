@@ -1,5 +1,63 @@
-.paper {
-  margin-left: 25%;
-  width: 50%;
+.form {
+  padding: 5;
+  text-align: center;
 }
-/*# sourceMappingURL=style.module.css.map */
+
+.root {
+  text-align: center;
+}
+
+.paper {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.list {
+  margin-left: 15%;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(10px + 1.5vmin);
+}
+
+.characters {
+  list-style: none;
+  padding-left: 0;
+}
+
+.characters li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 2px #d0d0d0;
+  border-radius: .2em;
+  padding: .5em .8em .5em .5em;
+  margin-bottom: 1em;
+}
+
+.characters p {
+  max-width: none;
+  font-weight: bold;
+  margin: 0;
+}
