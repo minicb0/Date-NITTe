@@ -36,10 +36,8 @@ import {
     TextField,
 	Typography,
 	Container,
-	// Grid,
 	InputAdornment,
 	IconButton,
-	// Link,
 } from "@material-ui/core";
 // import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import Stepper from '@material-ui/core/Stepper';
