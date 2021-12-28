@@ -4,15 +4,14 @@ import Styles from "./Style.module.css";
 import Contents from "../Components/Contents/Contents";
 
 export const home = () => {
-    const Hello = "123";
+    const content = "Contents";
     return (
         <div>
             <Navbars />
-            {Hello}
             <div className={Styles.row}>
                 <div className={Styles.column1} />
                 <div className={Styles.column2}>
-                    Contents
+                    {content}
                     <Contents />
                     <Contents />
                     <Contents />
