@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbars from '../Components/Navbar/Navbars';
 import Styles from "./Style.module.css";
-import ChatNames from "../Components/ChatNames/ChatNames";
+import ChatNames from "../Components/Chats/ChatNames/ChatNames";
 
 export const Chat = () => {
 const chat = "Chats";
@@ -25,9 +25,10 @@ const chat = "Chats";
                     />
                 </div>
                 <div className={Styles.right}>
-                    <div className={Styles.top}>
-                        { chat }
-                        Content
+                    <div style={{ textAlign: "left" }} className={Styles.top}>
+                        <div style={{ marginLeft: "15px" }}>
+                            Dinesh
+                        </div>
                     </div>
                 </div>
             </div>

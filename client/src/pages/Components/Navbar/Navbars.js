@@ -6,6 +6,7 @@ import React from 'react';
 //     // NavDropdown,
 // } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import send from '../../../assets/images/send';
 import {
   Toolbar,
   AppBar,
@@ -39,6 +40,15 @@ return (
       <Typography variant="h6" className={classes.title}>
         Date-NITTe
       </Typography>
+      <Button color="inherit">
+          <i className="fas fa-lg fa-home me-1" />
+          <i className="bi bi-send-fill me-1" />
+              Home
+      </Button>
+      <Button color="inherit">
+          <i className="bi bi-send me-1" />
+              Chat
+      </Button>
       <Button color="inherit">
           <i className="bi fa-lg bi-person-fill me-1" />
             Profile
