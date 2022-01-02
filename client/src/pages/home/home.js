@@ -7,7 +7,9 @@ export const home = () => {
     const content = "Contents";
     return (
         <div>
-            <Navbars />
+            <div style={{ position: "fixed", width: "100%" }}>
+                <Navbars />
+            </div>
             <div className={Styles.row}>
                 <div className={Styles.column1} />
                 <div className={Styles.column2}>

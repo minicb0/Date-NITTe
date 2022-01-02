@@ -1,39 +1,48 @@
-// html,body {
-//   overflow: scroll;
-// }
+  html,body {
+    overflow: hidden;
+  }
 .column1 {
     float: left;
     width: 10%;
     padding: 10px;
-    // border: 1px solid black;
     height: 300px;
+    // border: 1px solid black;
   }
 .column2 {
     float: left;
     width: 50%;
+    height: 90vh;
     padding: 10px;
     border: 1px solid red;
     text-align: center;
+    margin-top: 75px;
+    // max-height: 100%;
     overflow-y: scroll;
+    // white-space: nowrap;
   }
+.column2::-webkit-scrollbar { width: 0 !important }
 .column3 {
+    position: fixed;
+    margin-left: 60%;
     float: left;
     width: 30%;
     padding: 10px;
     border: 1px solid red;
-    height: 300px;
+    height: 50%;
     text-align: center;
+    margin-top: 75px;
+
   }
 .column4 {
     float: left;
     width: 10%;
     padding: 10px;
-    // border: 1px solid black;
     height: 300px;
+    // border: 1px solid black;
   }
-.row {
-  margin-top: 5px;
-} 
+.scroll {
+  overflow: scroll;
+}
 .row:after {
   content: "";
   display: table;
@@ -48,6 +57,7 @@
       width: 60%;
     }
     .column3 {
+      margin-left: 65%;
       width: 30%;
     }
     .column4 {
@@ -62,6 +72,7 @@
         width: 70%;
     }
     .column3 {
+        margin-left: 70%;
         width: 30%;
     }
     .column4 {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import {
 //     Nav,
 //     Navbar,
@@ -6,7 +7,6 @@ import React from 'react';
 //     // NavDropdown,
 // } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import send from '../../../assets/images/send';
 import {
   Toolbar,
   AppBar,
@@ -16,6 +16,8 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+// import send from '../../../assets/images/send.png';
+import Styles from "./Style.module.css";
 
 function Navbars() {
   const useStyles = makeStyles((theme) => ({
@@ -41,13 +43,16 @@ return (
         Date-NITTe
       </Typography>
       <Button color="inherit">
+        <Link to="/home" className={Styles.link}>
           <i className="fas fa-lg fa-home me-1" />
-          <i className="bi bi-send-fill me-1" />
               Home
+        </Link>
       </Button>
       <Button color="inherit">
-          <i className="bi bi-send me-1" />
+        <Link to="/chat" className={Styles.link}>
+          <i className="fas fa-lg fa-paper-plane me-2" />
               Chat
+        </Link>
       </Button>
       <Button color="inherit">
           <i className="bi fa-lg bi-person-fill me-1" />

@@ -1,0 +1,46 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 40px;
+  height: auto;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: inherit;
+  width: auto;
+  max-width: 70%;
+  margin-right: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 100%;
+}
+
+.Msg {
+  margin-left: 1px;
+  margin-right: 1px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+  color: honeydew;
+  background-color: #058505;
+}
+/*# sourceMappingURL=Style.module.css.map */

@@ -1,0 +1,35 @@
+.container
+{
+    display: flex;
+    flex-direction: row;
+    min-height: 40px;
+    height: auto;
+    width: 100%;
+    justify-content: start;
+    text-align: left;
+    // border: 2px solid black;
+}
+.Content
+{
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    width: auto;
+    max-width: 70%;
+    margin-right: 10px;
+    align-items: center;
+    line-height: 100%;
+    // justify-content: end;
+    // border: 1px solid blue;
+}
+.Msg
+{
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 10px;
+    // border: 1px solid greenyellow;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: white;
+    background-color: rgb(92, 92, 88);
+}
