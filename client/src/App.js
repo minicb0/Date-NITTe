@@ -2,8 +2,8 @@ import React from "react";
 import {
 	BrowserRouter as Router, Route, Switch, Redirect,
 } from "react-router-dom";
-import { Register } from "./pages/auth/register";
 import { Login } from "./pages/auth/login";
+// import { Navigation } from "./pages/navigation";
 
 const App = () => (
 	<Router>
@@ -11,7 +11,7 @@ const App = () => (
 			<Redirect to="/login" />
 		</Route>
 		<Switch>
-			<Route exact path="/register" component={Register} />
+			{/* <Route exact path="/register" component={Register} /> */}
 			<Route exact path="/login" component={Login} />
 		</Switch>
 	</Router>
