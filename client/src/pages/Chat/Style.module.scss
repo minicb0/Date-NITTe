@@ -1,0 +1,99 @@
+// html,body
+// {
+//     margin: 0;
+//     overflow: hidden;
+// }
+.container
+{
+    position: fixed;
+    // display: inline-block;
+    width: 100%;
+    // margin-top: 65px;
+    height: 100vh;
+    // text-align: center;
+}
+.content
+{
+    position: fixed;
+    width: 100%;
+    // display: inline-block;
+    text-align: center;
+    height: 100%;
+}
+.grid
+{
+    margin:35px auto;
+    width:80%;
+    height: 80%;
+    // border:2px solid black;
+    box-shadow: 0 7px 30px - 10px rgba(150,170,180,0.5);
+    border-radius: 25px;
+}
+.left {
+    float: left;
+    width: 300px;
+    // overflow: auto;
+    padding: 10px;
+    border: 0.5px solid blue;
+    height: 100%;
+  }
+$a: 100%; 
+$b: 300px;
+.right {
+    float: left;
+    width: calc(#{$a} - #{$b});
+    padding: 10px;
+    border: 0.5px solid red;
+    height: 100%;
+  }
+.top {
+    // position: fixed;
+    height: 50px;
+    width: 100%;
+    border-bottom: 2px solid black;
+    line-height: 50px;
+}
+.chatss
+{
+    max-height: 90%;
+    overflow: auto;
+}
+.chatss::-webkit-scrollbar 
+{ 
+    width: 5px !important 
+}
+.chatss::-webkit-scrollbar-track {
+    background: #e2e2e2; 
+  }
+   
+  /* Handle */
+  .chatss::-webkit-scrollbar-thumb {
+    background: rgb(175, 173, 173); 
+  }
+  
+  /* Handle on hover */
+  .chatss::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+@media screen and (max-width: 1024px) {
+    .grid
+    {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .left {
+        width:30%;
+    }
+    .right {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .left {
+        width:100%;
+    }
+    .right {
+        display: none;
+    }
+}

@@ -1,0 +1,102 @@
+html, body {
+  overflow: hidden;
+}
+
+.column1 {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  height: 300px;
+}
+
+.column2 {
+  float: left;
+  width: 50%;
+  height: 90vh;
+  padding: 10px;
+  border: 1px solid red;
+  text-align: center;
+  margin-top: 75px;
+  overflow-y: scroll;
+}
+
+.column2::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.column3 {
+  position: fixed;
+  margin-left: 60%;
+  float: left;
+  width: 30%;
+  padding: 10px;
+  border: 1px solid red;
+  height: auto;
+  text-align: center;
+  margin-top: 75px;
+}
+
+.column4 {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  height: 300px;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 1000px) {
+  .column1 {
+    width: 5%;
+  }
+  .column2 {
+    width: 60%;
+  }
+  .column3 {
+    margin-left: 65%;
+    width: 30%;
+  }
+  .column4 {
+    width: 5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column1 {
+    display: none;
+  }
+  .column2 {
+    width: 70%;
+  }
+  .column3 {
+    margin-left: 70%;
+    width: 30%;
+  }
+  .column4 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .column1 {
+    display: none;
+  }
+  .column2 {
+    width: 100%;
+  }
+  .column3 {
+    display: none;
+  }
+  .column4 {
+    display: none;
+  }
+}
+/*# sourceMappingURL=Style.module.css.map */

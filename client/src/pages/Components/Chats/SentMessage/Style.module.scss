@@ -1,0 +1,37 @@
+.container
+{
+    display: flex;
+    flex-direction: row;
+    min-height: 40px;
+    height: auto;
+    width: 100%;
+    justify-content: end;
+    text-align: left;
+    margin-top: 5px;
+    // border: 2px solid black;
+}
+.Content
+{
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    width: auto;
+    max-width: 70%;
+    margin-right: 10px;
+    align-items: center;
+    line-height: 100%;
+    // justify-content: end;
+    // border: 1px solid blue;
+}
+.Msg
+{
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 10px;
+    // padding-left: 10px;
+    // border: 1px solid greenyellow;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: honeydew;
+    background-color: rgb(5, 133, 5);
+}

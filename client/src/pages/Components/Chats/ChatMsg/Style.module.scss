@@ -1,0 +1,41 @@
+.container
+{
+    height: 100%;
+    // border: 2px solid greenyellow;
+}
+.top {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    text-align: left;
+    border-bottom: 2px solid black;
+    line-height: 100%;
+    align-items: center;
+}
+.image
+{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    // border: 1px solid black;
+    // border: 1px solid black;
+}
+.Name
+{
+    margin-left: 7.5px;
+    font-weight: 495;
+    font-size: 20px;
+}
+$a: 100%; 
+$b: 50px;
+.body
+{
+    display: flex;
+    width: 100%;
+    height: calc(#{$a} - #{$b});
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
