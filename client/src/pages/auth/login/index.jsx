@@ -6,7 +6,7 @@ import {
 	IconButton, InputAdornment,
 	InputLabel, OutlinedInput,
 	TextField, ThemeProvider,
-} from "@material-ui/core";
+} from "@mui/material";
 import { ArrowRight, Visibility, VisibilityOff } from "@material-ui/icons";
 import styles from "./style.module.css";
 

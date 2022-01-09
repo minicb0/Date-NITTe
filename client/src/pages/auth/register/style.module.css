@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+.bg {
+  height: 100%;
+  background-image: url("http://www.bestbackgroundwallpaper.com/wp-content/uploads/2020/09/colorful-background-ultra-hd-wallpaper-for-4k-uhd-widescreen-desktop-tablet-smartphone-5f6c9ce995fcb.jpg");
+  background-size: cover;
+}
+
+.stepper {
+  width: 40%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.formcontainer {
+  height: 500px;
+  margin-top: 5px;
+  border-top: 2px solid gray;
+  padding-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Lilita One", cursive;
+}
+
+.form {
+  width: 80%;
+}
+
+.list {
+  padding-bottom: 16px !important;
+}
+
+.list:hover {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.list:active {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.completedimage {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.imagediv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=style.module.css.map */
